@@ -7,5 +7,8 @@ $phar = new Phar($buildRoot . "/build.phar", FilesystemIterator::CURRENT_AS_FILE
 $phar->buildFromDirectory($srcRoot);
 $phar->setStub($phar->createDefaultStub("index.php"));
 
+//Removing config.ini
+$phar->delete('config.ini');
+
 //To copy config.ini
 //copy($srcRoot . "/config.ini", $buildRoot . "/config.ini");
